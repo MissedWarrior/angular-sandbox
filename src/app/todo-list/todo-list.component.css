@@ -1,0 +1,38 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.remove-icon {
+  cursor: pointer;
+  display: flex;
+  margin-right: 6px;
+}
+
+.todo-item {
+  display: flex;
+  padding-left: 12px;
+  position: relative;
+}
+
+.todo-item::before {
+  content: ' ';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  top: calc(50% - 3px);
+  left: 3px;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 12px;
+}
