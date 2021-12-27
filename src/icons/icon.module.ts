@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DeleteComponent } from './delete/delete.component';
+import { IconComponent } from './icon.component';
 
 @NgModule({
   declarations: [
-    DeleteComponent,
+    IconComponent,
   ],
+  exports: [IconComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  providers: []
 })
 export class IconModule {
 }
