@@ -7,6 +7,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
+import { IconModule } from '../icons/icon.module';
+
 import { appRoutes } from './routes';
 
 @NgModule({
@@ -19,8 +21,10 @@ import { appRoutes } from './routes';
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    IconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
