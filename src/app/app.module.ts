@@ -8,6 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 import { IconModule } from '../icons/icon.module';
+import { OnInitDirective } from '../directives/on-init.directive';
 
 import { appRoutes } from './routes';
 
@@ -16,7 +17,8 @@ import { appRoutes } from './routes';
     AppComponent,
     TodoListComponent,
     HomePageComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    OnInitDirective,
   ],
   imports: [
     BrowserModule,

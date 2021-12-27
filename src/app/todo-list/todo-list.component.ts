@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class TodoListComponent {
   constructor() {
+  }
+
+  logRef(el: ElementRef) {
+    console.log(el);
   }
 }
