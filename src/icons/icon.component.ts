@@ -1,23 +1,18 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  ViewChild,
-  ViewContainerRef,
-} from '@angular/core';
+import { Component, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
 
 import { DeleteComponent } from './delete/delete.component';
+import { DynamicViewDirective } from '../directives/dynamic-view.directive';
 
 @Component({
   selector: 'app-icon',
   templateUrl: './icon.component.html',
 })
-export class IconComponent implements OnChanges {
+export class IconComponent implements OnInit, OnChanges {
   @Input()
   icon!: string;
 
-  @ViewChild('iconRef', { static: true })
-  iconRef!: ViewContainerRef;
+  @ViewChild(DynamicViewDirective, { static: true })
+  iconRef!: DynamicViewDirective;
 
   constructor() {
   }
@@ -33,12 +28,14 @@ export class IconComponent implements OnChanges {
     }
   }
 
+  ngOnInit() {
+    this.iconRef.viewContainerRef.createComponent(this.activeIcon);
+  }
+
   ngOnChanges(changes: any) {
-    if (changes.icon.isFirstChange()) {
-      this.iconRef.createComponent(this.activeIcon);
-    } else {
-      this.iconRef.clear();
-      this.iconRef.createComponent(this.activeIcon);
+    if (!changes.icon.isFirstChange()) {
+      this.iconRef.viewContainerRef.clear();
+      this.iconRef.viewContainerRef.createComponent(this.activeIcon);
     }
   }
 }
