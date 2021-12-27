@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './delete.component.html',
 })
 export class DeleteComponent {
-  constructor() { }
 }
