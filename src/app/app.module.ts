@@ -10,6 +10,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { IconModule } from '../icons/icon.module';
 import { OnInitDirective } from '../directives/on-init.directive';
 
+import { ComponentsModule } from '../components/components.module';
+
 import { appRoutes } from './routes';
 
 @NgModule({
@@ -24,6 +26,7 @@ import { appRoutes } from './routes';
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     IconModule,
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
